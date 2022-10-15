@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+
+.el-icon-back {
+  font-size: 25px;
+  color: #fff;
+}
+
+.el-icon-back:hover {
+  color: #ccc;
+}
