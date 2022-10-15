@@ -147,7 +147,7 @@ export default {
 
 <style lang="less" scoped>
 .header-page {
-  background-color: #409eff;
+  background-color: #261d45;
   line-height: 60px;
   display: flex;
   .title {
