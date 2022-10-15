@@ -3,6 +3,7 @@
     <el-container>
       <el-header class="header-page">
         <i class="el-icon-back" @click="goHome"></i>
+        <span class="title">记录知识</span>
       </el-header>
       <el-main>
         <el-card>
@@ -15,7 +16,7 @@
             @ready="onEditorReady($event)">
           </quill-editor>
           <el-row :gutter="20">
-            <el-col :span="20" :offset="8">
+            <el-col :span="20">
               <el-button size="mini" type="primary" @click="theCache">
                 本地暂存
                 <i v-if="!getNotesCache" class="el-icon-close"></i>
@@ -23,7 +24,7 @@
               </el-button>
               <el-button size="mini" type="primary" @click="exportTheCache">暂存导出</el-button>
               <el-button size="mini" type="primary" @click="removeTheCache">清除暂存</el-button>
-              <el-button size="mini" type="primary" @click="rollOutArray">导出字符串</el-button>
+              <el-button size="mini" type="primary" @click="rollOutArray">转成数组</el-button>
             </el-col>
             <el-col class="col-alert">
               <el-alert
@@ -37,7 +38,7 @@
     </el-container>
 
     <el-dialog
-      title="已导出"
+      title="已转成数组"
       :visible.sync="dialogVisible"
       width="50%">
       <el-form ref="form" :model="contentForm" label-width="0">
@@ -148,6 +149,16 @@ export default {
 .header-page {
   background-color: #409eff;
   line-height: 60px;
+  display: flex;
+  .title {
+    font-size: 20px;
+    flex: 0.94;
+    color: #fff;
+    text-align: center;
+  }
+  .el-icon-back {
+    align-self: center;
+  }
 }
 .editer {
   min-height: 500px;
