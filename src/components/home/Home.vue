@@ -47,7 +47,7 @@ export default {
         }
       } else if(index == '3') {
         if(this.$route.path !== '/home/3') {
-          this.$router.push('/home/3')
+          this.$router.push('/home/temporary')
         }
       }
     }
