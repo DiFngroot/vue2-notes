@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/components/home/Home.vue'
 import Tipap from '@/components/tiptap/Tiptap.vue'
+import Introduce from '@/components/introduce/Introduce.vue'
 
 Vue.use(VueRouter)
 
@@ -11,9 +12,10 @@ const routes = [
   {
     path: '/home',
     name: 'home',
+    redirect: '/home/introduce',
     component: Home,
     children: [
-      // { path: 'tipap', component: Tipap }
+      { path: 'introduce', name: 'introduce', component: Introduce }
     ]
   }
 ]

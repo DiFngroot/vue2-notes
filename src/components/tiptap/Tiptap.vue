@@ -12,8 +12,7 @@
             ref="myQuillEditor"
             class="editer"
             background='#000'
-            :options="editorOption"
-            @ready="onEditorReady($event)">
+            :options="editorOption">
           </quill-editor>
           <el-row :gutter="20">
             <el-col :span="20">
@@ -93,19 +92,14 @@ export default {
     goHome() {
       this.$router.push('/')
     },
-    onEditorReady(editor) {
-      // console.log('editor ready!', editor)
-    },
     rollOutArray() {
       this.contentForm.contentText = String('[' + this.contentText + ']')
       this.dialogVisible = true
     },
     theCache() {
-      // window.sessionStorage.setItem('notesCache',this.content)
       window.sessionStorage.setItem('notesCache',this.content)
       this.$message.success('已暂存')
       this.getNotesCache = Boolean(window.sessionStorage.getItem('notesCache'))
-      console.log('暂存')
     },
     copyArray() {
       this.copyText(this.contentForm.contentText, () => {
@@ -113,7 +107,7 @@ export default {
         this.dialogVisible = false
       })
     },
-    copyText(text, callback){ // text: 要复制的内容， callback: 回调
+    copyText(text, callback){
         var tag = document.createElement('textarea');
         tag.setAttribute('id', 'cp_hgz_input');
         tag.value = text;
