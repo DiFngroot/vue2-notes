@@ -1,8 +1,16 @@
-body {
+html,
+body,
+#app,
+.home {
   margin: 0;
+  width: 100%;
+  height: 100%;
   background-color: #261d45 !important;
   min-width: 1500px;
-  max-width: 1000px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .el-icon-back {
@@ -19,6 +27,36 @@ body {
   background-color: #7a378b !important;
 }
 
-body::-webkit-scrollbar {
-  display: none;
+.el-card,
+.el-card__body {
+  height: 100% !important;
+}
+
+.el-tabs__content,
+.el-textarea__inner {
+  height: 500px !important;
+}
+
+.el-tabs__item {
+  color: #ffffff;
+}
+
+.el-tabs__item.is-active {
+  color: #f74aed;
+}
+
+.el-tabs__item:hover {
+  color: #f74aed;
+}
+
+.el-tabs__active-bar {
+  background-color: #f74aed !important;
+}
+
+.dv-active-ring-chart .active-ring-info .active-ring-name {
+  color: #f74aed !important;
+}
+
+.el-tab-pane {
+  height: 479px;
 }

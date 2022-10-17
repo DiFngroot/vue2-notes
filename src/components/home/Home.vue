@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <el-menu
       :default-active="activeIndex"
       class="el-menu-demo"
@@ -23,7 +23,7 @@
         </el-col>
       </el-row>
     </el-menu>
-    <router-view/>
+    <router-view @hidden="getShowHidden"/>
   </div>
 </template>
 
@@ -32,7 +32,19 @@ export default {
   name: 'Home',
   data () {
     return {
-      activeIndex: '1'
+      activeIndex: '1',
+      showHidden: '1'
+    }
+  },
+  created () {
+    if(this.$route.path === '/home/introduce') {
+      this.activeIndex = '1'
+    }
+    if(this.$route.path === '/tipap') {
+      this.activeIndex = '2'
+    }
+    if(this.$route.path === '/home/temporary') {
+      this.activeIndex = '3'
     }
   },
   methods: {
@@ -46,10 +58,14 @@ export default {
           this.$router.push('/tipap')
         }
       } else if(index == '3') {
-        if(this.$route.path !== '/home/3') {
+        if(this.$route.path !== '/home/temporary') {
           this.$router.push('/home/temporary')
         }
       }
+    },
+    getShowHidden(res) {
+      console.log(res)
+      this.showHidden = res
     }
   }
 }
