@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/components/home/Home.vue'
-import Tipap from '@/components/tiptap/Tiptap.vue'
-import Introduce from '@/components/introduce/Introduce.vue'
-import Temporary from '@/components/temporary/Temporary.vue'
+
+const Home = () => import(/* webpackChunkName: 'home-Tipap' */ '@/components/home/Home.vue')
+const Tipap = () => import(/* webpackChunkName: 'home-Tipap' */ '@/components/tiptap/Tiptap.vue')
+const Introduce = () => import(/* webpackChunkName: 'Introduce-Temporary' */ '@/components/introduce/Introduce.vue')
+const Temporary = () => import(/* webpackChunkName: 'Introduce-Temporary' */ '@/components/temporary/Temporary.vue')
 
 Vue.use(VueRouter)
 
